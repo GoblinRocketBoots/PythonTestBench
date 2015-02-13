@@ -27,7 +27,9 @@ SIGHT = 3
 RARE = 4
 MTYPE = 5
 
-# Player stats
-
-# Old one stats
-
+# Enums for worldmap
+NORTH = 0
+SOUTH = 1
+EAST = 2
+WEST = 3
+PLAYERS = 4 

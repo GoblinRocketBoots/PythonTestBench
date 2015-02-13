@@ -1,0 +1,15 @@
+--- OLD WORLD STRUCTURE FILE - DONT USE ---
+
+6
+loc0
+s loc2 e loc1
+loc1
+n loc0 s loc4 e loc3 w loc2 
+loc2
+n loc0 s loc4 e loc1
+loc3
+n loc2 s loc5
+loc4
+n loc2 s loc5 e loc1 
+loc5
+n loc3 w loc4
