@@ -1,5 +1,3 @@
-DEBUG = 1
-
 WINDOW_SIZE = (480, 640)
 
 BLACK = (0, 0, 0)
@@ -27,9 +25,15 @@ SIGHT = 3
 RARE = 4
 MTYPE = 5
 
-# Enums for worldmap
-NORTH = 0
-SOUTH = 1
-EAST = 2
-WEST = 3
-PLAYERS = 4 
+# Game states
+STARTUP = 0
+UPKEEP = 1
+ROLL = 2
+MOVEMENT = 3
+COMBAT = 4
+ENCOUNTER = 5
+MYTHOS = 6
+MONSTER = 7 
+BOSS = 8
+ENDING = 9
+

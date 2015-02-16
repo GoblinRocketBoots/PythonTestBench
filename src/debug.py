@@ -20,38 +20,42 @@ for loc in context.world.locations:
     print 'Location: %s Players: %s' % (loc, context.world.locations[loc])
 
 print '\n############# Players #############\n'
-print 'Context contains players %s' % context.players.keys()
+
+player_list = []
+
+for player in context.players:
+    player_list.append(player.name)
+
+print 'Context contains players %s' % player_list
 
 print '\n######## Testing Dijkstras ########\n'
 
 try:
     print 'Testing DiGiTALQU33F - Roll 1...'
-    result = ShortestPath.calculate(context.players['DiGiTALQU33F'].location, context.world.links, 1)
+    result = ShortestPath.calculate(context.players[0].location, context.world.links, 1)
     print 'Test results: %s\n' % result
 
     print 'Testing DiGiTALQU33F - Roll 2...'
-    result = ShortestPath.calculate(context.players['DiGiTALQU33F'].location, context.world.links, 2)
+    result = ShortestPath.calculate(context.players[0].location, context.world.links, 2)
     print 'Test results: %s\n' % result
 
     print 'Testing DiGiTALQU33F - Roll 6...'
-    result = ShortestPath.calculate(context.players['DiGiTALQU33F'].location, context.world.links, 6)
+    result = ShortestPath.calculate(context.players[0].location, context.world.links, 6)
     print 'Test results: %s\n' % result
 
     print 'Testing iRONVAGiNA - Roll 1...'
-    result = ShortestPath.calculate(context.players['iRONVAGiNA'].location, context.world.links, 1)
+    result = ShortestPath.calculate(context.players[1].location, context.world.links, 1)
     print 'Test results: %s\n' % result
 
     print 'Testing iRONVAGiNA - Roll 2...'
-    result = ShortestPath.calculate(context.players['iRONVAGiNA'].location, context.world.links, 2)
+    result = ShortestPath.calculate(context.players[1].location, context.world.links, 2)
     print 'Test results: %s\n' % result
     
     print 'Testing iRONVAGiNA - Roll 6...'
-    result = ShortestPath.calculate(context.players['iRONVAGiNA'].location, context.world.links, 6)
+    result = ShortestPath.calculate(context.players[1].location, context.world.links, 6)
     print 'Test results: %s\n' % result
 
 except Exception as e:
     print 'Failed shortest path test:\n%s: %s' % (type(e).__name__, e)
 
 print '\n######################## END OF TEST ########################\n'
-
-crap = raw_input()

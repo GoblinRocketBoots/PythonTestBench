@@ -14,34 +14,45 @@ from random import randint
 class Context:
 
     def __init__(self, numplayers, playerchars):
+        """
+        The number of players is passed in, along with the 
+        name and class of each character in a list.
+        """
+        self.state = STARTUP
+
         # Set how many players are playing
         self.numplayers = numplayers
-        self.players = {}
+        self.players = []
 
         # For each player, create a player object to contain player data
         for x in xrange(self.numplayers):
-            self.players[playerchars[x][0]] = Player(playerchars[x][1])
+            player_name, player_class = playerchars[x] 
+            self.players.append(Player(player_name, player_class))
 
-            # Create map object, which automatically builds map from world data
-            self.world = Worldmap()
+        # Create map object, which automatically builds map from world data
+        self.world = Worldmap()
                 
-            # Set player starting position in map object from player object data
-            for playername in self.players:
-                playerloc = self.players[playername].location 
-                self.world.locations[playerloc].append(playername)
+        # Set player starting position in map object from player object data
+        for player in self.players:
+            player_location = player.location 
+            player_name = player.name
+            self.world.locations[player_location].append(player_name)
 
-	# Might not be needed
-	def set_old_one(self, placeholder):
-		pass
+    def run_game(self):
+        """
+        Main game loop, will contain state machine
+        """
 
-	# Player moving logic
-	def move_player(self, placeholder):
-		pass
+        while self.state != ENDING:
+            pass
 
-	# Monster moving logic
-	def move_monster(self, placeholder):
-		pass
+    def move_player(self, player, newloc):
+        """
+        Move player to nearby node. Ideally called after
+        nearnode returns and graphics call is made.
+        """
+        self.world.update_player(player, self.players[player].location, newloc)
+        self.players[player].location = newloc
 
-	# Might move this function to another file once more utils surface
-	def roll(self):
-		return randint(1, 6)
+    def roll(self):
+        return randint(1, 6)
