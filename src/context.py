@@ -56,3 +56,35 @@ class Context:
 
     def roll(self):
         return randint(1, 6)
+
+    def success(self, character):
+        """
+        Rolls a dice, checks curse status and returns success
+        """
+        dice=self.roll();
+        CURSE=self.players[character].stats[9]
+        print 'Rolled %s' % dice
+        if CURSE == 1 and dice > 5:
+            return 1
+        if CURSE == 0 and dice > 4:
+            return 1
+        if CURSE == -1 and dice >3:
+            return 1
+        else:
+            return 0
+
+    def skillcheck(self, dicepool, difficulty, character):
+        """
+        Skill check logic
+        Parameters: Amount of dice to roll, how many successes are required, and
+        the player character in order to check curse status
+        return value is just debugging purposes, should not return any strings in final
+        """
+        successes = 0
+        for x in range(0, dicepool):
+            successes += self.success(character)
+        
+        if successes >= difficulty:
+            return 'SUCCESS WITH %s SUCCESSES!' % successes
+        else:
+            return 'FAILURE WITH %s SUCCESSES!' % successes

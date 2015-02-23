@@ -58,4 +58,19 @@ try:
 except Exception as e:
     print 'Failed shortest path test:\n%s: %s' % (type(e).__name__, e)
 
+    
+print '\n######## Testing SUCCESS/COMBAT ########\n'
+
+print 'Testing dice success iRONVAGiNA, CURSE = %s\n' % context.players[1].stats[9]
+result = context.success(1)
+print ' Test results: %s\n' % result
+
+
+print 'Testing dice success diGiTALQU33F, CURSE = %s\n' % context.players[0].stats[9]
+result = context.success(0)
+print ' Test results: %s\n' % result
+
+print 'Testing skillcheck logic with 5 dices, difficulty 2 for iRONVAGiNA'
+result = context.skillcheck(0, 2, 1)
+print 'Test Results: %s\n' % result
 print '\n######################## END OF TEST ########################\n'

@@ -8,7 +8,7 @@ BLUE = (0, 0, 255)
 GREY = (45, 45, 45)
 
 # Enums for player stats
-HEALTH = 0
+STAMINA = 0
 SANITY = 1
 STRENGTH = 2
 INTELLECT = 3
@@ -16,6 +16,8 @@ BRAVERY = 4
 SPEED = 5
 AGILITY = 6
 LUCK = 7
+FOCUS = 8
+CURSE = 9
 
 # Enums for monster stats
 SPOOKY = 0
