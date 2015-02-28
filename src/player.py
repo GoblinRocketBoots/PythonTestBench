@@ -13,11 +13,11 @@ class Player:
         if character == 'test_guy_1':
             self.stats[STAMINA] = 5
             self.stats[SANITY] = 5
-            self.stats[STRENGTH] = 3
-            self.stats[INTELLECT] = 5
-            self.stats[BRAVERY] = 4
+            self.stats[FIGHT] = 3
+            self.stats[LORE] = 5
+            self.stats[WILL] = 4
             self.stats[SPEED] = 3
-            self.stats[AGILITY] = 2
+            self.stats[SNEAK] = 2
             self.stats[LUCK] = 3
             self.stats[FOCUS] = 2
             self.stats[CURSE] = 1
@@ -26,11 +26,11 @@ class Player:
         elif character == 'test_guy_2':
             self.stats[STAMINA] = 10
             self.stats[SANITY] = 2
-            self.stats[STRENGTH] = 6
-            self.stats[INTELLECT] = 2
-            self.stats[BRAVERY] = 5
+            self.stats[FIGHT] = 6
+            self.stats[LORE] = 2
+            self.stats[WILL] = 5
             self.stats[SPEED] = 4
-            self.stats[AGILITY] = 1
+            self.stats[SNEAK] = 1
             self.stats[LUCK] = 2
             self.stats[FOCUS] = 2
             self.stats[CURSE] = 0

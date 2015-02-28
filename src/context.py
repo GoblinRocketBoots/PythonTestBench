@@ -88,3 +88,12 @@ class Context:
             return 'SUCCESS WITH %s SUCCESSES!' % successes
         else:
             return 'FAILURE WITH %s SUCCESSES!' % successes
+    
+    def horrorcheck(self):
+        pass
+    
+    def combatcheck(self):
+        pass
+    
+    def combat(self, character, monster):
+        pass
