@@ -30,9 +30,27 @@ class Worldmap:
 
             self.links[firstloc][secondloc] = 1
 
+    # Return nodes adjacent to current node
+    def nearnode(self, loc):
+        return self.links[loc]
+
+    # Move player between nodes, no real error checking
+    def updateplayer(self, player, loc, newloc):
+        if newloc in self.links[loc]:
+            self.locations[newloc].append(player)
+            self.locations[loc].remove(player)
+
+        else:
+            print "ADD ERRORS LATER, BUT SHIT GOOFED IN MOVEPLAYER"
+
 
 class ShortestPath:
-
+    """
+    Made into a class in order to deal with class method stuffs.
+    Probably a better way to do this. ShortestPath encapsulates 
+    dijkstra's algorithm, here edited so that the maximum
+    depth corresponds to dice rolls.
+    """
     not_visited = {}
     distance = {}
     predecessor = {}
